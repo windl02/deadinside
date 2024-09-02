@@ -1,26 +1,77 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ</title>
-    <link rel="stylesheet" href="/assets/main.css">
 </head>
 
 <body>
-    <h1>Chào mừng đến với Trang chủ</h1>
-    <div id="auth-buttons">
-        <button id="login-btn" onclick="window.location.href='/login'">Đăng nhập</button>
-        <button id="register-btn" onclick="window.location.href='/register'">Đăng ký</button>
-        <button id="profile-btn" style="display: none;" onclick="window.location.href='/profile'">Hồ sơ</button>
-        <button id="logout-btn" style="display: none;" onclick="logout()">Đăng xuất</button>
-    </div>
-    <div id="job-list">
-        <!-- Nội dung danh sách công việc sẽ được cập nhật ở đây -->
-    </div>
-    <script src="/js/homepage.js"></script>
+    <h1>Trang chủ</h1>
+    <nav>
+        <button id="loginButton" class="hidden">Đăng nhập</button>
+        <button id="registerButton" class="hidden">Đăng ký</button>
+        <button id="profileButton" class="hidden">Profile</button>
+        <button id="logoutButton" class="hidden">Đăng xuất</button>
+    </nav>
+
+    <div id="jobList"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const token = document.cookie.split('; ').find(row => row.startsWith('token='));
+            const loginButton = document.getElementById('loginButton');
+            const registerButton = document.getElementById('registerButton');
+            const profileButton = document.getElementById('profileButton');
+            const logoutButton = document.getElementById('logoutButton');
+            const jobList = document.getElementById('jobList');
+
+            if (token) {
+                const response = await fetch('https://deadinside.pages.dev/home', {
+                    headers: { 'Authorization': `Bearer ${token.split('=')[1]}` }
+                });
+                
+                if (response.ok) {
+                    const data = await response.json();
+
+                    if (data.isLoggedIn) {
+                        profileButton.style.display = 'inline';
+                        logoutButton.style.display = 'inline';
+                        data.allJobs.forEach(job => {
+                            const jobItem = document.createElement('div');
+                            jobItem.textContent = `Job: ${job.title} - ${job.description}`;
+                            jobList.appendChild(jobItem);
+                        });
+                    } else {
+                        loginButton.style.display = 'inline';
+                        registerButton.style.display = 'inline';
+                    }
+                }
+            } else {
+                loginButton.style.display = 'inline';
+                registerButton.style.display = 'inline';
+            }
+
+            logoutButton.addEventListener('click', async () => {
+                await fetch('https://deadinside.pages.dev/logout', { method: 'POST' });
+                document.cookie = 'token=; Max-Age=0; path=/;';
+                window.location.reload();
+            });
+
+            loginButton.addEventListener('click', () => {
+                window.location.href = '/login.html';
+            });
+
+            registerButton.addEventListener('click', () => {
+                window.location.href = '/register.html';
+            });
+
+            profileButton.addEventListener('click', () => {
+                window.location.href = '/profile.html';
+            });
+        });
+    </script>
 </body>
 
 </html>
