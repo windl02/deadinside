@@ -38,6 +38,7 @@
 
             if (result.success) {
                 localStorage.setItem('token', token);
+                localStorage.setItem('username', username);
                 alert(result.message); // Thông báo đăng nhập thành công
                 window.location.href = 'https://deadinside.pages.dev/public/home';
             } else {
