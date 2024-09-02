@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <style>
+        .button-container {
+            margin-top: 20px;
+        }
+        .button-container button {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>Danh Sách Công Việc</h2>
+    <div id="jobs-list"></div>
+
+    <div class="button-container" id="auth-buttons">
+        <!-- Các nút điều hướng sẽ được hiển thị ở đây -->
+    </div>
+
+    <script>
+        async function fetchJobs() {
+            try {
+                const response = await fetch('https://jobproj.xelanthantoc.workers.dev/home', {
+                    method: 'GET',
+                    credentials: 'include'  // Gửi cookie theo yêu cầu
+                });
+
+                const result = await response.json();
+                const jobsList = document.getElementById('jobs-list');
+                const authButtons = document.getElementById('auth-buttons');
+
+                // Hiển thị danh sách công việc
+                if (result.allJobs.length > 0) {
+                    jobsList.innerHTML = '<ul>' + result.allJobs.map(job => `<li>${job.title}</li>`).join('') + '</ul>';
+                } else {
+                    jobsList.innerHTML = 'Không có công việc nào.';
+                }
+
+                // Hiển thị các nút điều hướng dựa trên trạng thái đăng nhập
+                if (result.isLoggedIn) {
+                    authButtons.innerHTML = `
+                        <button onclick="location.href='https://deadinside.pages.dev/profile'">Profile</button>
+                        <button onclick="logout()">Logout</button>
+                    `;
+                } else {
+                    authButtons.innerHTML = `
+                        <button onclick="location.href='https://deadinside.pages.dev/login'">Login</button>
+                        <button onclick="location.href='https://deadinside.pages.dev/register'">Register</button>
+                    `;
+                }
+            } catch (error) {
+                console.error('Lỗi khi lấy danh sách công việc:', error);
+            }
+        }
+
+        async function logout() {
+            try {
+                await fetch('https://jobproj.xelanthantoc.workers.dev/logout', {
+                    method: 'POST',
+                    credentials: 'include'  // Gửi cookie theo yêu cầu
+                });
+
+                // Chuyển hướng đến trang đăng nhập sau khi đăng xuất
+                window.location.href = 'https://deadinside.pages.dev/login';
+            } catch (error) {
+                console.error('Lỗi khi đăng xuất:', error);
+            }
+        }
+
+        // Gọi hàm để tải danh sách công việc khi trang được tải
+        fetchJobs();
+    </script>
+</body>
+</html>
