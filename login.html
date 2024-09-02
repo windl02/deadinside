@@ -24,7 +24,7 @@
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
 
-            const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/login?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`, {
+            const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/login`, {
                 method: 'POST',
                 credentials: "include",
             });
@@ -33,7 +33,7 @@
 
             if (result.success) {
                 alert(result.message); // Thông báo đăng nhập thành công
-                window.location.href = result.redirectUrl; // Chuyển hướng đến trang home
+                window.location.href = 'https://deadinside.pages.dev/home';
             } else {
                 alert(result.message); // Thông báo đăng nhập thất bại
             }
