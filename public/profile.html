@@ -54,14 +54,14 @@
                         </div>
                     `;
                     actionButtons.innerHTML = `
-                        <button onclick="location.href='/edit-profile'">Edit</button>
+                        <button onclick="location.href='/editprofile'">Edit</button>
                         <button onclick="location.href='/changepass'">Đổi Mật Khẩu</button>
                     `;
                 } else {
                     // Nếu không có profile, hiển thị nút Create
                     profileContainer.innerHTML = '<p>Không có profile nào.</p>';
                     actionButtons.innerHTML = `
-                        <button onclick="location.href='/create-profile'">Create Profile</button>
+                        <button onclick="location.href='/createprofile'">Create Profile</button>
                         <button onclick="location.href='/changepass'">Đổi Mật Khẩu</button>
                     `;
                 }
