@@ -28,7 +28,7 @@
         async function fetchProfile() {
             try {
                 const username = localStorage.getItem('username');
-                const response = await fetch('https://jobproj.xelanthantoc.workers.dev/api/profile?username=${encodeURIComponent(username)}', {
+                const response = await fetch('https://jobproj.xelanthantoc.workers.dev/api/profile?username=${username}', {
                     method: 'GET',
                     credentials: 'include' // Đảm bảo gửi cookie cùng với yêu cầu
                 });
