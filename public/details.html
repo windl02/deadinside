@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi Tiết Công Việc</title>
+</head>
+<body>
+    <h1>Chi Tiết Công Việc</h1>
+    <div>
+        <label for="title">Tiêu đề công việc:</label>
+        <input type="text" id="title" readonly>
+    </div>
+    <div>
+        <label for="salary">Mức lương:</label>
+        <input type="text" id="salary" readonly>
+    </div>
+    <div>
+        <label for="level">Cấp bậc:</label>
+        <input type="text" id="level" readonly>
+    </div>
+    <div>
+        <label for="exp">Kinh nghiệm:</label>
+        <input type="text" id="exp" readonly>
+    </div>
+    <div>
+        <label for="quantity">Số lượng:</label>
+        <input type="text" id="quantity" readonly>
+    </div>
+    <div>
+        <label for="form">Hình thức làm việc:</label>
+        <input type="text" id="form" readonly>
+    </div>
+    <div>
+        <label for="address">Địa chỉ:</label>
+        <input type="text" id="address" readonly>
+    </div>
+    <div>
+        <label for="companyName">Tên công ty:</label>
+        <input type="text" id="companyName" readonly>
+    </div>
+    <div>
+        <label for="companyAddress">Địa chỉ công ty:</label>
+        <input type="text" id="companyAddress" readonly>
+    </div>
+    <div>
+        <label for="companyUrl">Website công ty:</label>
+        <input type="text" id="companyUrl" readonly>
+    </div>
+    <div>
+        <label for="description">Mô tả công việc:</label>
+        <textarea id="description" readonly></textarea>
+    </div>
+
+    <script>
+        // Lấy id công việc từ URL query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const jobId = urlParams.get('id');
+
+        // Gọi API để lấy chi tiết công việc bằng phương thức GET
+        fetch(`https://jobproj.xelanthantoc.workers.dev/details?id=${jobId}`, {
+            method: 'GET'
+        })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('title').value = data.title;
+                document.getElementById('salary').value = data.salary;
+                document.getElementById('level').value = data.level;
+                document.getElementById('exp').value = data.exp;
+                document.getElementById('quantity').value = data.quantity;
+                document.getElementById('form').value = data.form;
+                document.getElementById('address').value = data.address;
+                document.getElementById('companyName').value = data.company.name;
+                document.getElementById('companyAddress').value = data.company.address;
+                document.getElementById('companyUrl').value = data.company.url;
+                document.getElementById('description').value = data.description;
+            })
+            .catch(error => {
+                console.error('Error fetching job details:', error);
+                alert('Không thể tải chi tiết công việc.');
+            });
+    </script>
+</body>
+</html>
