@@ -41,7 +41,7 @@
                 const row = document.createElement('tr');
 
                 row.innerHTML = `
-                    <td>${job.jobs.title}</td>
+                    <td><a href="/details?id=${job.jobs.id}">${job.jobs.title}</a></td>
                     <td>${job.jobs.salary}</td>
                     <td>${job.jobs.level}</td>
                     <td>${job.jobs.exp}</td>

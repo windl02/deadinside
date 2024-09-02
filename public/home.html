@@ -11,11 +11,45 @@
         .button-container button {
             margin-right: 10px;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <h2>Danh Sách Công Việc</h2>
-    <div id="jobs-list"></div>
+    <table>
+        <thead>
+            <tr>
+                <th>Tiêu đề công việc</th>
+                <th>Mức lương</th>
+                <th>Cấp bậc</th>
+                <th>Kinh nghiệm</th>
+                <th>Số lượng</th>
+                <th>Hình thức</th>
+                <th>Địa chỉ</th>
+                <th>Tên công ty</th>
+                <th>Địa chỉ công ty</th>
+                <th>Website công ty</th>
+            </tr>
+        </thead>
+        <tbody id="jobs-list">
+            <!-- Các hàng sẽ được thêm vào đây -->
+        </tbody>
+    </table>
 
     <div class="button-container" id="auth-buttons">
         <!-- Các nút điều hướng sẽ được hiển thị ở đây -->
@@ -32,14 +66,31 @@
                 const result = await response.json();
                 const tokenC = result.token;
                 const tokenL = localStorage.getItem('token');
-                const jobsList = document.getElementById('jobs-list');
+                const jobsListElement = document.getElementById('jobs-list');
                 const authButtons = document.getElementById('auth-buttons');
 
                 // Hiển thị danh sách công việc
                 if (result.allJobs.length > 0) {
-                    jobsList.innerHTML = '<ul>' + result.allJobs.map(job => `<li>${job.title}</li>`).join('') + '</ul>';
+                    result.allJobs.forEach(job => {
+                        const row = document.createElement('tr');
+
+                        row.innerHTML = `
+                            <td><a href="/details?id=${job.jobs.id}">${job.jobs.title}</a></td>
+                            <td>${job.jobs.salary}</td>
+                            <td>${job.jobs.level}</td>
+                            <td>${job.jobs.exp}</td>
+                            <td>${job.jobs.quantity}</td>
+                            <td>${job.jobs.form}</td>
+                            <td>${job.jobs.address}</td>
+                            <td>${job.company.name}</td>
+                            <td>${job.company.address}</td>
+                            <td><a href="${job.company.url}" target="_blank">${job.company.url}</a></td>
+                        `;
+
+                        jobsListElement.appendChild(row);
+                    });
                 } else {
-                    jobsList.innerHTML = 'Không có công việc nào.';
+                    jobsListElement.innerHTML = '<tr><td colspan="10">Không có công việc nào.</td></tr>';
                 }
 
                 // Hiển thị các nút điều hướng dựa trên trạng thái đăng nhập
