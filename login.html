@@ -34,8 +34,10 @@
             });
 
             const result = await response.json();
+            const token = result.token;
 
             if (result.success) {
+                localStorage.setItem('token', token);
                 alert(result.message); // Thông báo đăng nhập thành công
                 window.location.href = 'https://deadinside.pages.dev/home';
             } else {
