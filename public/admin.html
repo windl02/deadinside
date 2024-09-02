@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh Sách Công Việc</title>
+</head>
+<body>
+    <h1>Danh Sách Công Việc</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Tiêu đề công việc</th>
+                <th>Mức lương</th>
+                <th>Cấp bậc</th>
+                <th>Kinh nghiệm</th>
+                <th>Số lượng</th>
+                <th>Hình thức</th>
+                <th>Địa chỉ</th>
+                <th>Tên công ty</th>
+                <th>Địa chỉ công ty</th>
+                <th>Website công ty</th>
+            </tr>
+        </thead>
+        <tbody id="jobList">
+            <!-- Các hàng sẽ được thêm vào đây -->
+        </tbody>
+    </table>
+
+    <script>
+        // Gọi API để lấy danh sách công việc
+        fetch('https://jobproj.xelanthantoc.workers.dev/api/job', {
+            method: 'GET'
+        })
+        .then(response => response.json())
+        .then(data => {
+            const jobListElement = document.getElementById('jobList');
+
+            // Duyệt qua danh sách công việc và thêm vào bảng
+            data.forEach(job => {
+                const row = document.createElement('tr');
+
+                row.innerHTML = `
+                    <td><a href="/details?id=${job.jobs.id}">${job.jobs.title}</a></td>
+                    <td>${job.jobs.salary}</td>
+                    <td>${job.jobs.level}</td>
+                    <td>${job.jobs.exp}</td>
+                    <td>${job.jobs.quantity}</td>
+                    <td>${job.jobs.form}</td>
+                    <td>${job.jobs.address}</td>
+                    <td>${job.company.name}</td>
+                    <td>${job.company.address}</td>
+                    <td><a href="${job.company.url}" target="_blank">${job.company.url}</a></td>
+                `;
+
+                jobListElement.appendChild(row);
+            });
+        })
+        .catch(error => {
+            console.error('Error fetching job list:', error);
+            alert('Không thể tải danh sách công việc.');
+        });
+    </script>
+</body>
+</html>
