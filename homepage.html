@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ</title>
+    <link rel="stylesheet" href="/assets/main.css">
+</head>
+
+<body>
+    <h1>Chào mừng đến với Trang chủ</h1>
+    <div id="auth-buttons">
+        <button id="login-btn" onclick="window.location.href='/login'">Đăng nhập</button>
+        <button id="register-btn" onclick="window.location.href='/register'">Đăng ký</button>
+        <button id="profile-btn" style="display: none;" onclick="window.location.href='/profile'">Hồ sơ</button>
+        <button id="logout-btn" style="display: none;" onclick="logout()">Đăng xuất</button>
+    </div>
+    <div id="job-list">
+        <!-- Nội dung danh sách công việc sẽ được cập nhật ở đây -->
+    </div>
+    <script src="/js/homepage.js"></script>
+</body>
+
+</html>
