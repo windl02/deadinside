@@ -6,14 +6,38 @@
     <title>Trang Chủ</title>
     <style>
         .button-container {
-            margin-top: 20px;
+            margin: 20px 0;
         }
+
         .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .search-container {
+            margin: 20px 0;
+        }
+
+        .search-container input {
+            padding: 10px;
+            font-size: 16px;
+            width: 300px;
             margin-right: 10px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Nhập từ khóa tìm kiếm công việc..." />
+        <button id="searchButton">Tìm kiếm</button>
+    </div>
     <h2>Danh Sách Công Việc</h2>
     <div id="jobs-list"></div>
 
@@ -22,6 +46,30 @@
     </div>
 
     <script>
+        // Xử lý sự kiện tìm kiếm
+        document.getElementById('searchButton').addEventListener('click', async () => {
+
+            const searchTerm = document.getElementById('searchInput').value;
+
+            try {
+                const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/api/job/search?res=${searchTerm}`, {
+                    method: 'GET' 
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+
+                const jobs = await response.json();
+
+                renderJobList(jobs);
+            } catch (error) {
+                // Xử lý lỗi nếu có
+                console.error('Error fetching job list:', error);
+                alert('Không thể tải danh sách công việc.');
+            }
+        });
+
         async function fetchJobs() {
             try {
                 const response = await fetch('https://jobproj.xelanthantoc.workers.dev/home', {
