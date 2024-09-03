@@ -510,13 +510,13 @@
                     // Hiển thị danh sách công việc
                     if (result.length > 0) {
                         //jobsList.innerHTML = '<ul>' + result.map(job => `<li>${job.jobs.title} - ${job.company.name}</li>`).join('') + '</ul>';
-                        jobsList.innerHTML = `<div class="ec-job-item d-flex align-items-center justify-content-between">
+                        jobsList.innerHTML = result.map(job =>`<div class="ec-job-item d-flex align-items-center justify-content-between">
                             <img width="50" height="50" src="./asset/media/img/2-2.png" alt=""
                                 class="ec-job-img" />
                             <div class="ec-job-item-content">
-                                <div class="ec-job-name">${jobs.title}</div>
+                                <div class="ec-job-name">${job.jobs.title}</div>
                                 <div class="ec-job-content-tag mt-2 d-flex flex-wrap">
-                                    <div class="ec-job-tag-item">${jobs.salary}</div>
+                                    <div class="ec-job-tag-item">${job.jobs.salary}</div>
                                 </div>
                             </div>
                             <div class="ec-job-content-save-btn">
@@ -529,7 +529,7 @@
                                     </svg>
                                 </button>
                             </div>
-                        </div>`
+                        </div>`)
                     } else {
                         jobsList.innerHTML = 'Không có công việc nào.';
                     }
