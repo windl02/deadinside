@@ -77,10 +77,13 @@
                     companyAddress,
                     companyUrl,
                     description
-                })
+                }),
+                credentials:"include",
             });
 
             const result = await response.json();
+            const token = result.token;
+            const role = result.role;
             if (response.ok) {
                 alert('Công việc đã được thêm thành công');
             } else {
