@@ -40,9 +40,9 @@
             if (result.success) {
                 localStorage.setItem('token', token);
                 localStorage.setItem('username', username);
-                localStorage.setItem('role', role);
+                localStorage.setItem('role'. role);
                 alert(result.message); // Thông báo đăng nhập thành công
-                if (role == 'admin'){
+                if (role == `admin`){
                     window.location.href = 'https://deadinside.pages.dev/public/admin';
                 }
                 else{
