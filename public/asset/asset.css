@@ -1,0 +1,504 @@
+.ec-header-item-link {
+    color: #000;
+    transition: all .5s ease-in-out;
+}
+
+.ec-header-item-link:hover {
+    color: #1967d2;
+}
+
+.ec-login-register-btn {
+    color: #fff;
+    background-color: #000;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+    border: 1px solid #000;
+}
+
+.ec-login-register-btn:hover {
+    color: #000;
+    background-color: #fff;
+}
+
+/* slide */
+
+.ec-slide-bg {
+    background-image: url(./media/img/bg-main-banner.png);
+}
+
+.ec-slide-content {
+    padding-left: 14%;
+}
+
+.ec-slide-title {
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+}
+
+.ec-slide-para {
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
+
+.ec-slide-para span {
+    font-weight: 500;
+}
+
+.ec-slide-search-bar {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+
+.ec-slide-search,
+.ec-slide-search:active,
+.ec-slide-search:focus {
+    outline: none;
+    border: none;
+    width: 400px;
+}
+
+.ec-slide-search-submit {
+    width: 154px;
+    height: 60px;
+    border-radius: 10px;
+    background-color: #1967d2;
+    color: #fff;
+    border: none;
+    transition: all .5s ease-in-out;
+    border: 1px solid transparent;
+}
+
+.ec-slide-search-submit:hover {
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+/* banner icon list */
+
+.ec-section-banner {
+    padding: 80px 0;
+}
+
+.ec-banner-content {
+    padding-left: 100px;
+}
+
+.ec-banner-title {
+    font-size: 40px;
+    font-weight: 500;
+    margin-top: 20px;
+}
+
+.ec-banner-subtitle {
+    font-size: 18px;
+    font-weight: 500;
+    color: #1967D2;
+    text-transform: uppercase;
+}
+
+.ec-banner-para {
+    max-width: 500px;
+    font-size: 15px;
+    font-weight: 400;
+    color: dimgray;
+    margin-top: 30px;
+}
+
+.ec-content-list {
+    counter-reset: section;
+    row-gap: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ec-contentlist-item {}
+
+.ec-contentlist-item-para {
+    font-size: 18px;
+    font-weight: 500;
+    color: #202124;
+}
+
+.ec-content-list-item-para::before {
+    counter-increment: section;
+    content: "0" counter(section);
+    font-size: 40px;
+    font-weight: 700;
+    color: #202124;
+    opacity: 0.2;
+    margin-right: 30px;
+}
+
+.ec-banner-btn {
+    padding: 15px 50px;
+    background-color: #1967d2;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    border: 1px solid #1967d2;
+    border-radius: 8px;
+    margin-top: 30px;
+    transition: all .5s ease-in-out;
+}
+
+.ec-banner-btn:hover {
+    background-color: #fff;
+    color: #1967d2;
+}
+
+.ec-banner-img-position {
+    max-width: 280px;
+    right: 100px;
+    bottom: -40px;
+    border-radius: 8px;
+    animation: ec-floating 4s ease-in-out infinite;
+    transform: translateY(0);
+}
+
+.ec-icon-list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 40px;
+}
+
+.ec-iconlist-item-title {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ec-iconlist-item-para {
+    font-size: 16px;
+    color: dimgray;
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+/* featured job */
+
+.ec-section-featuredjob {
+    padding: 80px 0 120px 0;
+}
+
+.ec-featuredjob-title {
+    color: #202124;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.ec-featuredjob-subtitle {
+    color: dimgray;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.ec-job-item {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px 20px;
+}
+
+.ec-job-name {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.ec-job-tag-item {
+    width: fit-content;
+    padding: 4px 16px;
+    background-color: #1967d226;
+    color: #1967d2;
+    border-radius: 16px;
+    font-size: 12px;
+}
+
+.ec-job-save-btn {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    transition: all .5s ease-in-out;
+}
+
+.ec-job-save-btn:hover {
+    background-color: #ececec;
+}
+
+/* section brand */
+
+.ec-section-brand {
+    padding: 45px 0 80px 0;
+}
+
+.ec-marquee-list {
+    column-gap: 64px;
+}
+
+/* footer */
+
+.section-footer {
+    padding-bottom: 80px;
+}
+
+footer {
+    background-color: #0c071b;
+}
+
+.footer-logo {
+    margin-bottom: 20px;
+}
+
+.footer-title {
+    color: #fff;
+    padding-top: 90px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.footer-subtitle {
+    padding-bottom: 90px;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.footer-widget-title {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+
+}
+
+.footer-widget-infor-p {
+    color: #fff;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.footer-widget-link a {
+    color: #fff;
+    display: block;
+    text-decoration: none;
+    transition: all .5s ease-in-out;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.footer-widget-link a:hover {
+    color: #FB803E;
+}
+
+.footer-sub-box {
+    background-color: #fff;
+    border-radius: 8px;
+    width: fit-content;
+    padding: 9px;
+}
+
+.footer-sub-input {
+    padding: 5px 20px;
+}
+
+.footer-sub-submit {
+    padding: 6px 10px;
+    background-color: #FB803E;
+    color: #fff;
+    border: 1px solid #FB803E;
+    border-radius: 8px;
+    transition: all .5s ease-in-out;
+}
+
+.footer-sub-submit:hover {
+    color: #FB803E;
+    background-color: #fff;
+}
+
+.joblist-box {
+    padding: 120px 0 50px 0;
+}
+
+.joblist-spacing {
+    padding: 50px 0 100px;
+}
+
+.btn-job-showmore {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+}
+
+.bg-joblist-gray {
+    background-color: #f0f5f7;
+}
+
+/* login register */
+.ec-heading-page {
+    background-image: url(./media/img/Mask\ group.png);
+    margin-top: 85px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ec-heading-page-text {
+    padding: 85px 0;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+.ec-login-input {
+    padding: 13px 16px;
+    border-radius: 3px;
+    border: 1px solid #EBEBEB;
+}
+
+.ec-login-box {
+    padding: 70px 120px;
+}
+
+.ec-login-title {
+    color: #000;
+font-size: 28px;
+font-weight: 400;
+margin-bottom: 40px;
+}
+
+.ec-login-forgot {
+    color: #545454;
+    font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 24px;
+transition: all .5s ease-out;
+}
+
+.ec-login-submit {
+    display: flex;
+width: 270px;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 8px;
+border-radius: 3px;
+background: #000;
+color: #fff;
+padding: 15px 0;
+font-size: 14px;
+font-weight: 600;
+transition: all .5s ease-in-out;
+}
+
+.ec-login-para {
+    color: var(--2, #545454);
+
+/* Body */
+font-family: "Albert Sans";
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px; /* 157.143% */
+}
+
+.ec-login-submit:hover {
+color: #000;
+}
+
+.ec-login-to-register-login {
+    font-size: 14px ;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+    width: fit-content;
+    transition: all .5s ease-in-out;
+}
+
+.ec-login-to-register-login::after {
+    content: "";
+    background-color: currentColor;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: -2px;
+}
+
+.ec-login-to-register-login:hover {
+    color: #D0473E;
+}
+
+/* account */
+
+.ec-account-box {
+    padding: 80px 0;
+}
+
+.ec-account-content-welcome {
+    margin-bottom: 12px;
+} 
+
+.ec-account-logout {
+    transition: all .5s ease-in-out;
+}
+
+.ec-account-logout:hover {
+    color: #D0473E;
+}
+
+.ec-account-content-title {
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+/* other */
+
+.ec-job-info-head {
+    background-image: url(./media/img/bg-4.png);
+    margin-top: 85px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.ec-job-info-content {
+    margin-bottom: 80px;
+}
+
+.ec-job-info-head-box {
+    padding: 40px 0;
+}
+
+.ec-job-info-content-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: #202124;
+    margin-bottom: 20px;
+}
+
+.ec-job-infor-content-para {
+    font-size: 15px;
+    font-weight: 300;
+    color: dimgray;
+}
+
+.job-overview-box {
+    padding: 30px;
+    background-color: #f5f7fc;
+    border-radius: 12px;
+}
+
+.ec-info-overview-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: #202124;
+}
+
+.ec-info-overview-p {
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 0;
+}
