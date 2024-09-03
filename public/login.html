@@ -36,6 +36,7 @@
             const result = await response.json();
             const token = result.token;
             const role = result.role;
+            if (role === 'jobseeker')   role = 'home';
 
             if (result.success) {
                 localStorage.setItem('token', token);
