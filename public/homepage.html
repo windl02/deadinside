@@ -509,12 +509,12 @@
                     if (result.length > 0) {
                         //jobsList.innerHTML = '<ul>' + result.map(job => `<li>${job.jobs.title} - ${job.company.name}</li>`).join('') + '</ul>';
                         jobsList.innerHTML = result.map(job =>
-                        `<div class="col-xl-3 col-md-6" >        
+                        `<div class="col-xl-3 col-md-6">
                             <div class="ec-job-item d-flex align-items-center justify-content-between">
                                 <img width="50" height="50" src="./asset/media/img/2-2.png" alt=""
-                                    class="ec-job-img" />
+                                    class="ec-job-img m-3" />
                                 <div class="ec-job-item-content">
-                                    <div class="ec-job-name">${job.jobs.title}</div>
+                                    <a class="ec-job-name text-dark text-decoration-none"  href="https://deadinside.pages.dev/public/details?id=${job.jobs.id}">${job.jobs.title}</a>
                                     <div class="ec-job-content-tag mt-2 d-flex flex-wrap">
                                         <div class="ec-job-tag-item">${job.jobs.salary}</div>
                                     </div>
