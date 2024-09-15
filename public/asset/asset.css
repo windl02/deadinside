@@ -204,8 +204,13 @@
 }
 
 .ec-job-name {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: var(--ecom-webkit-line-clamp, 2);
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .ec-job-tag-item {
