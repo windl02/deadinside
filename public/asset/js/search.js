@@ -168,10 +168,10 @@ async function logout() {
     }
 }
 
-document.getElementById('searchButton').addEventListener('click', () => {
-    const query = document.getElementById('searchInput').value.trim();
-    fetchJobs(query); // Thực hiện tìm kiếm với từ khóa
-});
+// document.getElementById('searchButton').addEventListener('click', () => {
+//     const query = document.getElementById('searchInput').value.trim();
+//     fetchJobs(query); // Thực hiện tìm kiếm với từ khóa
+// });
 
 // Gọi hàm để tải dữ liệu khi trang được tải
 fetchJobs();
