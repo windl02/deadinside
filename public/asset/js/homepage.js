@@ -131,8 +131,7 @@ function fetchJobs(page = 1) {
                 `;
             } else {
                 authButtons.innerHTML = `
-                    <button class="btn-no-style" onclick="location.href='https://deadinside.pages.dev/public/login'">Login</button> / 
-                    <button class="btn-no-style" onclick="location.href='https://deadinside.pages.dev/public/register'">Register</button>
+                    <a class="btn-no-style" href='https://deadinside.pages.dev/public/login'>Login/Register</a>
                 `;
             }
         },
