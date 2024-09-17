@@ -365,22 +365,14 @@
                 } else {
                     jobDetailElement.innerHTML = data.jobs.description;
                     jobName.innerHTML = data.jobs.title;
-                    jobForm.innerText = data.jobs.form;
-                    jobOvForm.innerText = data.jobs.form;
-                    jobSalary.innerHTML = data.jobs.salary;
-                    jobOvSalary.innerHTML = `
+                    jobForm.innerHTML = data.jobs.form;
+                    jobSalary.innerHTML = `
                         ${data.jobs.salary}
                     `
                     jobAddress.innerHTML = `
                         ${data.jobs.address}
                     `
-                    jobOvAddress.innerHTML = `
-                        ${data.jobs.address}
-                    `
                     jobLevel.innerHTML = `
-                        ${data.jobs.level}
-                    `
-                    jobOvLevel.innerHTML = `
                         ${data.jobs.level}
                     `
                 }
