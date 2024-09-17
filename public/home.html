@@ -249,20 +249,10 @@
                             </div>
                             <div class="d-flex justify-content-center mt-5">
                                 <nav aria-label="...">
-                                    <ul class="pagination">
-                                      <li class="page-item disabled">
-                                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-                                      </li>
-                                      <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                      <li class="page-item active" aria-current="page">
-                                        <a class="page-link" href="#">2</a>
-                                      </li>
-                                      <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                      <li class="page-item">
-                                        <a class="page-link" href="#">Next</a>
-                                      </li>
+                                    <ul class="pagination" id="pagination">
+                                      
                                     </ul>
-                                  </nav>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -502,8 +492,13 @@
         swiperEl.initialize();
       </script>
       <script>
+            const queryString = window.location.search;
+            // Tạo đối tượng URLSearchParams
+            const urlParams = new URLSearchParams(queryString);
+            const page = urlParams.get('page');
             async function fetchJobs() {
                 try {
+                    var url = page == null ? `https://jobproj.xelanthantoc.workers.dev/api/job?page=1&pageSize=9` : `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`
                     const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/api/job?page=1&pageSize=9`, {
                         method: 'GET',
                         credentials: 'include'
@@ -512,6 +507,7 @@
                     const result = await response.json();
                     const jobsResult = result.jobs;
                     const jobsList = document.getElementById('jobs-list');
+                    const jobPage = document.getElementById('pagination')
                     const authButtons = document.getElementById('auth-buttons');
                     const token = localStorage.getItem('token');
     
@@ -544,6 +540,8 @@
                             </div>
                         </div>`
                         ).join('')
+
+
                     } else {
                         jobsList.innerHTML = 'Không có công việc nào.';
                     }
