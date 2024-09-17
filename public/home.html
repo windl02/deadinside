@@ -494,12 +494,9 @@
         swiperEl.initialize();
       </script>
       <script>
-            const queryString = window.location.search;
-            // Tạo đối tượng URLSearchParams
-            const urlParams = new URLSearchParams(queryString);
-            const page = urlParams.get('page');
-            function fetchJobs() {
-                var url = page == null ? `https://jobproj.xelanthantoc.workers.dev/api/job?page=1&pageSize=9` : `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`;
+            
+            function fetchJobs(page = 1) {
+                var url = `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`;
                 console.log(url);
             
                 $.ajax({
@@ -545,20 +542,16 @@
                             ).join('');
                             
                             jobPage.innerHTML = `
-                                <li class="page-item disabled">
-                                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                                <li class="page-item ${currentPage == 1 ? 'disabled' : ''}">
+                                    <a class="page-link" href="#" onclick="fetchJobs(${currentPage - 1})">Previous</a>
                                 </li>
-                                <li class="page-item active" aria-current="page">
-                                    <a class="page-link" href="https://deadinside.pages.dev/public/home?page=1">1</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="https://deadinside.pages.dev/public/home?page=2">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="https://deadinside.pages.dev/public/home?page=3">3</a>
-                                </li>
-                                <li class="page-item">
-                                    <a class="page-link" href="#">Next</a>
+                                ${[...Array(totalPages)].map((_, i) => `
+                                    <li class="page-item ${i + 1 === currentPage ? 'active' : ''}">
+                                        <a class="page-link" href="#" onclick="fetchJobs(${i + 1})">${i + 1}</a>
+                                    </li>
+                                `).join('')}
+                                <li class="page-item ${currentPage == totalPages ? 'disabled' : ''}">
+                                    <a class="page-link" href="#" onclick="fetchJobs(${currentPage + 1})">Next</a>
                                 </li>
                             `;
                         } else {
