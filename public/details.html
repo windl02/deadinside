@@ -137,7 +137,7 @@
                             </div>
                             </div>
                             <div class="ec-job-content-save-btn d-flex">
-                                <button type="button" class="btn btn-primary me-5">Đăng kí làm việc</button>
+                                <button type="button" class="btn btn-primary me-5" onclick="redictUrl()">Đăng kí làm việc</button>
                                 <button class="ec-job-save-btn rounded-circle">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="24"
                                         viewBox="0 0 12 16" fill="none">
@@ -283,6 +283,12 @@
             return urlParams.get(param);
         }
 
+        const url =""
+
+        function redictUrl(){
+
+        }
+
         // Gọi API để lấy chi tiết công việc
         async function fetchJobDetails() {
             const jobId = getQueryParam('id');
@@ -385,6 +391,8 @@
                                         </p>
                                         </div>
                     `
+
+                    url = data.company.url
                 }
             } catch (error) {
                 console.error('Lỗi khi lấy chi tiết công việc:', error);
