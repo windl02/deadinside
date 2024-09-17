@@ -511,6 +511,8 @@
                         const jobPage = document.getElementById('pagination');
                         const authButtons = document.getElementById('auth-buttons');
                         const token = localStorage.getItem('token');
+                        const currentPage = result.currentPage;
+                        const totalPages = result.totalPages;
             
                         // Hiển thị danh sách công việc
                         if (jobsResult.length > 0) {
