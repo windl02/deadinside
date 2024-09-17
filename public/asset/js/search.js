@@ -69,8 +69,17 @@ function renderPagination(currentPage, totalPages) {
 }
 
 
+// Lấy chuỗi truy vấn từ URL
+const queryString = window.location.search;
+
+// Tạo đối tượng URLSearchParams
+const urlParams = new URLSearchParams(queryString);
+
+// Lấy giá trị của tham số 'name' và 'age'
+const query = urlParams.get('query');
+
 function fetchJobs(page = 1) {
-    var url = `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`;
+    var url = `https://jobproj.xelanthantoc.workers.dev/api/job/search?res=${query}&page=${page}&pageSize=9`;
     $.ajax({
         url: url,
         method: 'GET',
@@ -168,10 +177,10 @@ async function logout() {
     }
 }
 
-// document.getElementById('searchButton').addEventListener('click', () => {
-//     const query = document.getElementById('searchInput').value.trim();
-//     fetchJobs(query); // Thực hiện tìm kiếm với từ khóa
-// });
+document.getElementById('searchButton').addEventListener('click', () => {
+    const query = document.getElementById('searchInput').value.trim();
+    window.location.href = `https://deadinside.pages.dev/public/joblist?query=${query}`
+});
 
 // Gọi hàm để tải dữ liệu khi trang được tải
 fetchJobs();
