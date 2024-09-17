@@ -187,7 +187,7 @@ async function logout() {
 
 document.getElementById('searchButton').addEventListener('click', () => {
     const query = document.getElementById('searchInput').value.trim();
-    window.location.href = `https://deadinside.pages.dev/public/search?query=${query}`
+    window.location.href = `http://127.0.0.1:5500/public/search.html?query=${query}`
 });
 
 // Gọi hàm để tải dữ liệu khi trang được tải
