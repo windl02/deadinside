@@ -3,11 +3,11 @@ function renderPagination(currentPage, totalPages) {
     const paginationLimit = 5; // Số trang hiển thị tối đa
     let pages = [];
 
-    // Thêm trang đầu tiên
+    // Thêm trang trước đó (Previous)
     if (currentPage > 1) {
         pages.push(`
             <li class="page-item">
-                <a class="page-link" href="#" onclick="fetchJobs(${currentPage - 1})">Previous</a>
+                <button class="page-link" onclick="fetchJobs(${currentPage - 1})">Previous</button>
             </li>
         `);
     }
@@ -21,7 +21,7 @@ function renderPagination(currentPage, totalPages) {
         if (startPage > 1) {
             pages.push(`
                 <li class="page-item">
-                    <a class="page-link" href="#" onclick="fetchJobs(1)">1</a>
+                    <button class="page-link" onclick="fetchJobs(1)">1</button>
                 </li>
                 <li class="page-item disabled"><span class="page-link">...</span></li>
             `);
@@ -31,7 +31,7 @@ function renderPagination(currentPage, totalPages) {
         for (let i = startPage; i <= endPage; i++) {
             pages.push(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
-                    <a class="page-link" href="#" onclick="fetchJobs(${i})">${i}</a>
+                    <button class="page-link" onclick="fetchJobs(${i})">${i}</button>
                 </li>
             `);
         }
@@ -41,7 +41,7 @@ function renderPagination(currentPage, totalPages) {
             pages.push(`
                 <li class="page-item disabled"><span class="page-link">...</span></li>
                 <li class="page-item">
-                    <a class="page-link" href="#" onclick="fetchJobs(${totalPages})">${totalPages}</a>
+                    <button class="page-link" onclick="fetchJobs(${totalPages})">${totalPages}</button>
                 </li>
             `);
         }
@@ -50,23 +50,24 @@ function renderPagination(currentPage, totalPages) {
         for (let i = 1; i <= totalPages; i++) {
             pages.push(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
-                    <a class="page-link" href="#" onclick="fetchJobs(${i})">${i}</a>
+                    <button class="page-link" onclick="fetchJobs(${i})">${i}</button>
                 </li>
             `);
         }
     }
 
-    // Thêm trang cuối cùng
+    // Thêm trang tiếp theo (Next)
     if (currentPage < totalPages) {
         pages.push(`
             <li class="page-item">
-                <a class="page-link" href="#" onclick="fetchJobs(${currentPage + 1})">Next</a>
+                <button class="page-link" onclick="fetchJobs(${currentPage + 1})">Next</button>
             </li>
         `);
     }
 
     return pages.join('');
 }
+
 
 function fetchJobs(page = 1) {
     var url = `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`;

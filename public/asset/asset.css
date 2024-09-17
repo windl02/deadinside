@@ -507,3 +507,16 @@ color: #000;
     font-weight: 300;
     margin-bottom: 0;
 }
+
+.page-link {
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.page-link:disabled {
+    color: #6c757d;
+    cursor: not-allowed;
+}
