@@ -71,8 +71,6 @@ function renderPagination(currentPage, totalPages) {
 
 function fetchJobs(page = 1) {
     var url = `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`;
-    console.log(url);
-
     $.ajax({
         url: url,
         method: 'GET',
