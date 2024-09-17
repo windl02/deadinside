@@ -128,6 +128,7 @@ function fetchJobs(page = 1) {
                     <button onclick="location.href='https://deadinside.pages.dev/public/profile'">Profile</button>
                     <button onclick="logout()">Logout</button>
                 `;
+                
             } else {
                 authButtons.innerHTML = `
                     <a class="btn-no-style" href='https://deadinside.pages.dev/public/login'>Login/Register</a>
