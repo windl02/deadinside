@@ -78,7 +78,7 @@ function fetchJobs(page = 1) {
             withCredentials: true // Để gửi cookies
         },
         success: function(result) {
-            $("#countJob").text(`There are ${result.totalItems} jobs in the field of information technology for you`)
+            $("#countJob").text(`Có ${result.totalItems} việc làm lĩnh vực công nghệ thông tin cho bạn`)
             const jobsResult = result.jobs;
             const jobsList = document.getElementById('jobs-list');
             const jobPage = document.getElementById('pagination');
