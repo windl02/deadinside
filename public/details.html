@@ -352,9 +352,13 @@
                 const jobDetailElement = document.getElementById('jobDetail');
                 const jobName = document.getElementById('job-name')
                 const jobSalary = document.getElementById('job-salary')
+                const jobOvSalary = document.getElementById('job-overv-salary')
                 const jobAddress = document.getElementById('job-adress')
+                const jobOvAddress = document.getElementById('job-overv-adress')
                 const jobForm = document.getElementById('job-form')
+                const jobOvForm = document.getElementById('job-Overv-form')
                 const jobLevel = document.getElementById('job-level')
+                const jobOvLevel = document.getElementById('job-overv-level')
 
                 if (data.message) {
                     jobDetailElement.innerHTML = `<p>${data.message}</p>`;
@@ -362,13 +366,23 @@
                     jobDetailElement.innerHTML = data.jobs.description;
                     jobName.innerHTML = data.jobs.title;
                     jobForm.innerHTML = data.jobs.form;
+                    jobOvForm.innerHTML = data.jobs.form;
                     jobSalary.innerHTML = `
+                        ${data.jobs.salary}
+                    `
+                    jobOvSalary.innerHTML = `
                         ${data.jobs.salary}
                     `
                     jobAddress.innerHTML = `
                         ${data.jobs.address}
                     `
+                    jobOvAddress.innerHTML = `
+                        ${data.jobs.address}
+                    `
                     jobLevel.innerHTML = `
+                        ${data.jobs.level}
+                    `
+                    jobOvLevel.innerHTML = `
                         ${data.jobs.level}
                     `
                 }
