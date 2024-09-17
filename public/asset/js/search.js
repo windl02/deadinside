@@ -79,7 +79,7 @@ const urlParams = new URLSearchParams(queryString);
 const query = urlParams.get('query');
 
 function fetchJobs(page = 1) {
-    var url = `https://jobproj.xelanthantoc.workers.dev/api/job/search?res=${query}&page=${page}&pageSize=9`;
+    var url = query!=null?`https://jobproj.xelanthantoc.workers.dev/api/job/search?res=${query}&page=${page}&pageSize=9`:`https://jobproj.xelanthantoc.workers.dev/api/job/search?page=${page}&pageSize=9`;
     $.ajax({
         url: url,
         method: 'GET',
