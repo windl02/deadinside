@@ -137,6 +137,10 @@ function fetchJobs(page = 1) {
                     <button class="btn" onclick="location.href='https://deadinside.pages.dev/public/profile'">Profile</button>
                     <button class="btn" onclick="logout()">Logout</button>
                 `;
+
+                $('#accountBT1').attr("href", "https://deadinside.pages.dev/public/profile");
+                $('#accountBT2').attr("href", "https://deadinside.pages.dev/public/profile");
+
                 
             } else {
                 authButtons.innerHTML = `

@@ -125,9 +125,12 @@ function fetchJobs(page = 1) {
             // Hiển thị các nút điều hướng dựa trên trạng thái đăng nhập
             if (token) {
                 authButtons.innerHTML = `
-                    <button onclick="location.href='https://deadinside.pages.dev/public/profile'">Profile</button>
-                    <button onclick="logout()">Logout</button>
+                    <button class="btn" onclick="location.href='https://deadinside.pages.dev/public/profile'">Profile</button>
+                    <button class="btn" onclick="logout()">Logout</button>
                 `;
+
+                $('#accountBT1').attr("href", "https://deadinside.pages.dev/public/profile");
+                $('#accountBT2').attr("href", "https://deadinside.pages.dev/public/profile");
                 
             } else {
                 authButtons.innerHTML = `
