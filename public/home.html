@@ -522,22 +522,23 @@
         swiperEl.initialize();
       </script>
       <script>
-            async function fetchJobs(query = "") {
+            async function fetchJobs() {
                 try {
-                    const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/api/job/search?res=${query}`, {
+                    const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/api/job?page=1&pageSize=30`, {
                         method: 'GET',
                         credentials: 'include'
                     });
     
                     const result = await response.json();
+                    const jobsResult = result.jobs;
                     const jobsList = document.getElementById('jobs-list');
                     const authButtons = document.getElementById('auth-buttons');
                     const token = localStorage.getItem('token');
     
                     // Hiển thị danh sách công việc
-                    if (result.length > 0) {
+                    if (jobsResult.length > 0) {
                         //jobsList.innerHTML = '<ul>' + result.map(job => `<li>${job.jobs.title} - ${job.company.name}</li>`).join('') + '</ul>';
-                        jobsList.innerHTML = result.map(job =>
+                        jobsList.innerHTML = jobsResult.map(job =>
                         `<div class="col-xl-4 col-md-6">
                             <div class="ec-job-item d-flex align-items-center justify-content-between">
                                 <div class="d-flex align-items-center">
