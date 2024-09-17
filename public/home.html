@@ -498,7 +498,7 @@
             const page = urlParams.get('page');
             async function fetchJobs() {
                 try {
-                    var url = page == null ? `https://jobproj.xelanthantoc.workers.dev/api/job?page=1&pageSize=9` : `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`
+                    var url = `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`
                     const response = await fetch(`https://jobproj.xelanthantoc.workers.dev/api/job?page=1&pageSize=9`, {
                         method: 'GET',
                         credentials: 'include'
