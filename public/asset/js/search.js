@@ -188,4 +188,8 @@ document.getElementById('searchButton').addEventListener('click', () => {
 
 // Gọi hàm để tải dữ liệu khi trang được tải
 fetchJobs();
+
+function redirectUrl(){
+    window.location.href="https://deadinside.pages.dev/public/search"
+}
   
