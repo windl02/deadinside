@@ -1,235 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ecomposer.co</title>
     <link rel="stylesheet" href="./asset/asset.css" />
     <link rel="stylesheet" href="./asset/base.css" />
-    <link rel="stylesheet" href="./asset/bootstrap-5.0.2-dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link
+      rel="stylesheet"
+      href="./asset/bootstrap-5.0.2-dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-        crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet" />
-</head>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<body>
+  <body>
     <header>
-        <div class="container-fluid">
-            <nav class="fixed-top bg-white">
-                <div class="container-primary">
-                    <div class="ec-header pt-4 pb-4">
-                        <div class="row">
-                            <div class="col-3 ec-header-dropdown d-lg-none align-items-center d-flex">
-                                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasWithBackdrop" aria-controls="offcanvasWithBackdrop">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
-                                        fill="none">
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.5 11.5C2.5 11.2239 2.72386 11 3 11H13C13.2761 11 13.5 11.2239 13.5 11.5C13.5 11.7761 13.2761 12 13 12H3C2.72386 12 2.5 11.7761 2.5 11.5Z"
-                                            fill="white" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.5 7.5C2.5 7.22386 2.72386 7 3 7H13C13.2761 7 13.5 7.22386 13.5 7.5C13.5 7.77614 13.2761 8 13 8H3C2.72386 8 2.5 7.77614 2.5 7.5Z"
-                                            fill="white" />
-                                        <path fill-rule="evenodd" clip-rule="evenodd"
-                                            d="M2.5 3.5C2.5 3.22386 2.72386 3 3 3H13C13.2761 3 13.5 3.22386 13.5 3.5C13.5 3.77614 13.2761 4 13 4H3C2.72386 4 2.5 3.77614 2.5 3.5Z"
-                                            fill="white" />
-                                    </svg>
-                                </button>
-                                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop"
-                                    aria-labelledby="offcanvasWithBackdropLabel">
-                                    <div class="offcanvas-header">
-                                        <h5 class="offcanvas-title" id="offcanvasWithBackdropLabel">
-                                            Menu
-                                        </h5>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="offcanvas-body">
-                                        <div class="ec-header-menu d-flex flex-column justify-content-center">
-                                            <div class="ec-header-item mb-3">
-                                                <a href="https://deadinside.pages.dev/public/home" class="ec-header-item-link text-decoration-none">Trang chủ</a>
-                                            </div>
-                                            <div class="ec-header-item mb-3">
-                                                <a href="https://deadinside.pages.dev/public/joblist" class="ec-header-item-link text-decoration-none">Tìm việc làm</a>
-                                            </div>
-                                            <div class="ec-header-item ms-4 me-4">
-                                                <a id="accountBT1" href="https://deadinside.pages.dev/public/login" class="ec-header-item-link text-decoration-none">Tài khoản</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-6 d-flex justify-content-center align-items-center">
-                                <img width="200px" class="ec-header-logo" src="./asset/media/img/ecomposer-logo.png"
-                                    alt="" />
-                            </div>
-                            <div class="col-lg-8 d-lg-flex d-none justify-content-center align-items-center">
-                                <div class="ec-header-menu d-flex justify-content-center">
-                                    <div class="ec-header-item ms-4 me-4">
-                                        <a href="https://deadinside.pages.dev/public/home" class="ec-header-item-link text-decoration-none">Trang chủ</a>
-                                    </div>
-                                    <div class="ec-header-item ms-4 me-4">
-                                        <a href="https://deadinside.pages.dev/public/joblist" class="ec-header-item-link text-decoration-none">Tìm việc làm</a>
-                                    </div>
-                                    <div class="ec-header-item ms-4 me-4">
-                                        <a id="accountBT2" href="https://deadinside.pages.dev/public/login" class="ec-header-item-link text-decoration-none">Tài khoản</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div
-                                class="col-lg-2 col-3 d-flex justify-content-end justify-content-xl-center align-items-center">
-                                <div class="ec-header-login-register" id="auth-buttons">
-                                    
-                                </div>
-                            </div>
-                        </div>
+      <div class="container-fluid">
+        <nav class="fixed-top bg-white">
+          <div class="container-primary">
+            <div class="ec-header pt-4 pb-4">
+              <div class="row">
+                <div
+                  class="col-3 ec-header-dropdown d-lg-none align-items-center d-flex"
+                >
+                  <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBackdrop"
+                    aria-controls="offcanvasWithBackdrop"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.5 11.5C2.5 11.2239 2.72386 11 3 11H13C13.2761 11 13.5 11.2239 13.5 11.5C13.5 11.7761 13.2761 12 13 12H3C2.72386 12 2.5 11.7761 2.5 11.5Z"
+                        fill="white"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.5 7.5C2.5 7.22386 2.72386 7 3 7H13C13.2761 7 13.5 7.22386 13.5 7.5C13.5 7.77614 13.2761 8 13 8H3C2.72386 8 2.5 7.77614 2.5 7.5Z"
+                        fill="white"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M2.5 3.5C2.5 3.22386 2.72386 3 3 3H13C13.2761 3 13.5 3.22386 13.5 3.5C13.5 3.77614 13.2761 4 13 4H3C2.72386 4 2.5 3.77614 2.5 3.5Z"
+                        fill="white"
+                      />
+                    </svg>
+                  </button>
+                  <div
+                    class="offcanvas offcanvas-start"
+                    tabindex="-1"
+                    id="offcanvasWithBackdrop"
+                    aria-labelledby="offcanvasWithBackdropLabel"
+                  >
+                    <div class="offcanvas-header">
+                      <h5
+                        class="offcanvas-title"
+                        id="offcanvasWithBackdropLabel"
+                      >
+                        Menu
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close text-reset"
+                        data-bs-dismiss="offcanvas"
+                        aria-label="Close"
+                      ></button>
                     </div>
+                    <div class="offcanvas-body">
+                      <div
+                        class="ec-header-menu d-flex flex-column justify-content-center"
+                      >
+                        <div class="ec-header-item mb-3">
+                          <a
+                            href="https://deadinside.pages.dev/public/home"
+                            class="ec-header-item-link text-decoration-none"
+                            >Trang chủ</a
+                          >
+                        </div>
+                        <div class="ec-header-item mb-3">
+                          <a
+                            href="https://deadinside.pages.dev/public/joblist"
+                            class="ec-header-item-link text-decoration-none"
+                            >Tìm việc làm</a
+                          >
+                        </div>
+                        <div class="ec-header-item ms-4 me-4">
+                          <a
+                            id="accountBT1"
+                            href="https://deadinside.pages.dev/public/login"
+                            class="ec-header-item-link text-decoration-none"
+                            >Tài khoản</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-            </nav>
-        </div>
+                <div
+                  class="col-lg-2 col-6 d-flex justify-content-center align-items-center"
+                >
+                  <img
+                    width="200px"
+                    class="ec-header-logo"
+                    src="./asset/media/img/ecomposer-logo.png"
+                    alt=""
+                  />
+                </div>
+                <div
+                  class="col-lg-8 d-lg-flex d-none justify-content-center align-items-center"
+                >
+                  <div class="ec-header-menu d-flex justify-content-center">
+                    <div class="ec-header-item ms-4 me-4">
+                      <a
+                        href="https://deadinside.pages.dev/public/home"
+                        class="ec-header-item-link text-decoration-none"
+                        >Trang chủ</a
+                      >
+                    </div>
+                    <div class="ec-header-item ms-4 me-4">
+                      <a
+                        href="https://deadinside.pages.dev/public/joblist"
+                        class="ec-header-item-link text-decoration-none"
+                        >Tìm việc làm</a
+                      >
+                    </div>
+                    <div class="ec-header-item ms-4 me-4">
+                      <a
+                        id="accountBT2"
+                        href="https://deadinside.pages.dev/public/login"
+                        class="ec-header-item-link text-decoration-none"
+                        >Tài khoản</a
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="col-lg-2 col-3 d-flex justify-content-end justify-content-xl-center align-items-center"
+                >
+                  <div class="ec-header-login-register" id="auth-buttons"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
     <main>
-        <div class="container-fluid">
-            <div class="container-primary">
-                <div class="joblist-box">
-                    <div class="ec-slide-search-bar border d-flex justify-content-between">
-                        <div class="d-flex align-items-center pt-xl-3 pb-xl-3">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25"
-                                viewBox="0 0 25 25" fill="none">
-                                <path
-                                    d="M24.2266 22.9071L18.3694 17.05C19.8253 15.2993 20.7024 13.0511 20.7024 10.6015C20.7024 5.03152 16.171 0.5 10.6013 0.5C5.0314 0.5 0.5 5.03152 0.5 10.6015C0.5 16.1712 5.0314 20.7023 10.6013 20.7023C13.0507 20.7023 15.299 19.8253 17.0498 18.3694L22.9071 24.2266C23.0892 24.4089 23.3281 24.4999 23.5668 24.4999C23.8056 24.4999 24.0444 24.4089 24.2267 24.2266C24.5911 23.8622 24.5911 23.2715 24.2266 22.9071ZM2.36621 10.6015C2.36621 6.06055 6.06043 2.36621 10.6013 2.36621C15.142 2.36621 18.8361 6.06055 18.8361 10.6015C18.8361 15.1421 15.142 18.8361 10.6013 18.8361C6.06043 18.8361 2.36621 15.1421 2.36621 10.6015Z"
-                                    fill="black" />
-                            </svg>
-                            <input type="text" class="ec-slide-search ms-3" id="searchInput"
-                                placeholder="Job title, keywords, or company" />
-                        </div>
-                        <button class="ec-slide-search-submit" id="searchButton">Find Jobs</button>
-                    </div>
-                    
-                </div>
-
-                
-                <a name="" id="" class="btn btn-primary" href="https://deadinside.pages.dev/public/search" role="button">Find by AI</a>
+      <div class="container-fluid">
+        <div class="container-primary">
+          <div class="joblist-box">
+            <div
+              class="ec-slide-search-bar border d-flex justify-content-between"
+            >
+              <div class="d-flex align-items-center pt-xl-3 pb-xl-3">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="25"
+                  height="25"
+                  viewBox="0 0 25 25"
+                  fill="none"
+                >
+                  <path
+                    d="M24.2266 22.9071L18.3694 17.05C19.8253 15.2993 20.7024 13.0511 20.7024 10.6015C20.7024 5.03152 16.171 0.5 10.6013 0.5C5.0314 0.5 0.5 5.03152 0.5 10.6015C0.5 16.1712 5.0314 20.7023 10.6013 20.7023C13.0507 20.7023 15.299 19.8253 17.0498 18.3694L22.9071 24.2266C23.0892 24.4089 23.3281 24.4999 23.5668 24.4999C23.8056 24.4999 24.0444 24.4089 24.2267 24.2266C24.5911 23.8622 24.5911 23.2715 24.2266 22.9071ZM2.36621 10.6015C2.36621 6.06055 6.06043 2.36621 10.6013 2.36621C15.142 2.36621 18.8361 6.06055 18.8361 10.6015C18.8361 15.1421 15.142 18.8361 10.6013 18.8361C6.06043 18.8361 2.36621 15.1421 2.36621 10.6015Z"
+                    fill="black"
+                  />
+                </svg>
+                <input
+                  type="text"
+                  class="ec-slide-search ms-3"
+                  id="searchInput"
+                  placeholder="Job title, keywords, or company"
+                />
+              </div>
+              <div>
+                <button class="ec-slide-search-submit" id="searchButton">
+                  Find Jobs
+                </button>
+                <a
+                  name=""
+                  id=""
+                  class="btn btn-primary"
+                  href="https://deadinside.pages.dev/public/search"
+                  role="button"
+                  >Find by AI</a
+                >
+              </div>
             </div>
+          </div>
         </div>
-        <div class="container-fluid bg-joblist-gray">
-            <div class="container-primary">
-                <div class="joblist-spacing">
-                    <div class="ec-jobs-list mt-5 text-center">
-                        <div class="row justify-content-between gy-4">
-                            <div class="ec-jobs-list mt-5">
-                                <div class="row gy-4" id="jobs-list">
-                                    
-                                </div>
-                                <div class="d-flex justify-content-center mt-5">
-                                    <nav aria-label="...">
-                                        <ul class="pagination" id="pagination">
-                                          
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                            
-                        </div>
-                        
-                    </div>
+      </div>
+      <div class="container-fluid bg-joblist-gray">
+        <div class="container-primary">
+          <div class="joblist-spacing">
+            <div class="ec-jobs-list mt-5 text-center">
+              <div class="row justify-content-between gy-4">
+                <div class="ec-jobs-list mt-5">
+                  <div class="row gy-4" id="jobs-list"></div>
+                  <div class="d-flex justify-content-center mt-5">
+                    <nav aria-label="...">
+                      <ul class="pagination" id="pagination"></ul>
+                    </nav>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </main>
     <footer>
-        <div class="container-fluid">
-            <div class="container-primary">
-                <div class="section-footer">
-                    <div class="footer-title text-center">Got a question?</div>
-                    <div class="footer-subtitle text-center">
-                        We’re here to help. Check out our FAQs, send us an email or call
-                        us at 2 600 7777 9999
-                    </div>
-                    <div class="row g-5">
-                        <div class="col-xl-3 col-md-6 col-12">
-                            <div class="footer-logo">
-                                <img width="200" src="./asset/media/img/logo-white-png.png" alt="" />
-                            </div>
-                            <div class="footer-information">
-                                <div class="footer-widget-block">
-                                    <div class="footer-widget-title">
-                                        Call us <br />123 456 7890
-                                    </div>
-                                    <div class="footer-widget-infor-p">
-                                        328 Queensberry Street, North Melbourne VIC <br />3051,
-                                        Australia.<br />support@superio.com
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-12">
-                            <div class="footer-widget-title mb-4">For Candidates</div>
-                            <div class="footer-widget-link">
-                                <a href="">Browse Jobs</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-12">
-                            <div class="footer-widget-title mb-4">For Employers</div>
-                            <div class="footer-widget-link">
-                                <a href="">All Employers</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-2 col-md-6 col-12">
-                            <div class="footer-widget-title mb-4">About Us</div>
-                            <div class="footer-widget-link">
-                                <a href="">Contact Us</a>
-                            </div>
-                            <div class="footer-widget-link">
-                                <a href="">About Us</a>
-                            </div>
-                            <div class="footer-widget-link">
-                                <a href="">Terms</a>
-                            </div>
-                            <div class="footer-widget-link">
-                                <a href="">FAQs</a>
-                            </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6 col-12">
-                            <div class="footer-widget-block">
-                                <div class="footer-widget-title mb-4">Join Us On</div>
-                                <div class="footer-widget-infor-p mb-4">
-                                    We don’t send spam so don’t worry.
-                                </div>
-                                <div class="footer-sub-box">
-                                    <input class="footer-sub-input" type="email" name="" id=""
-                                        placeholder="Your e-mail" />
-                                    <button class="footer-sub-submit">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="12"
-                                            viewBox="0 0 16 12" fill="currentColor">
-                                            <path
-                                                d="M0 2C0 0.895431 0.895431 0 2 0H14C15.1046 0 16 0.89543 16 2V10C16 11.1046 15.1046 12 14 12H2C0.895431 12 0 11.1046 0 10V2ZM2 1C1.44772 1 1 1.44772 1 2V2.2169L8 6.4169L15 2.2169V2C15 1.44772 14.5523 1 14 1H2ZM15 3.3831L10.2919 6.20794L15 9.10522V3.3831ZM14.9662 10.2586L9.32583 6.7876L8 7.5831L6.67417 6.7876L1.03376 10.2586C1.14774 10.6855 1.53715 11 2 11H14C14.4628 11 14.8523 10.6855 14.9662 10.2586ZM1 9.10522L5.70808 6.20794L1 3.3831V9.10522Z"
-                                                fill="" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+      <div class="container-fluid">
+        <div class="container-primary">
+          <div class="section-footer">
+            <div class="footer-title text-center">Got a question?</div>
+            <div class="footer-subtitle text-center">
+              We’re here to help. Check out our FAQs, send us an email or call
+              us at 2 600 7777 9999
             </div>
+            <div class="row g-5">
+              <div class="col-xl-3 col-md-6 col-12">
+                <div class="footer-logo">
+                  <img
+                    width="200"
+                    src="./asset/media/img/logo-white-png.png"
+                    alt=""
+                  />
+                </div>
+                <div class="footer-information">
+                  <div class="footer-widget-block">
+                    <div class="footer-widget-title">
+                      Call us <br />123 456 7890
+                    </div>
+                    <div class="footer-widget-infor-p">
+                      328 Queensberry Street, North Melbourne VIC <br />3051,
+                      Australia.<br />support@superio.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-2 col-md-6 col-12">
+                <div class="footer-widget-title mb-4">For Candidates</div>
+                <div class="footer-widget-link">
+                  <a href="">Browse Jobs</a>
+                </div>
+              </div>
+              <div class="col-xl-2 col-md-6 col-12">
+                <div class="footer-widget-title mb-4">For Employers</div>
+                <div class="footer-widget-link">
+                  <a href="">All Employers</a>
+                </div>
+              </div>
+              <div class="col-xl-2 col-md-6 col-12">
+                <div class="footer-widget-title mb-4">About Us</div>
+                <div class="footer-widget-link">
+                  <a href="">Contact Us</a>
+                </div>
+                <div class="footer-widget-link">
+                  <a href="">About Us</a>
+                </div>
+                <div class="footer-widget-link">
+                  <a href="">Terms</a>
+                </div>
+                <div class="footer-widget-link">
+                  <a href="">FAQs</a>
+                </div>
+              </div>
+              <div class="col-xl-3 col-md-6 col-12">
+                <div class="footer-widget-block">
+                  <div class="footer-widget-title mb-4">Join Us On</div>
+                  <div class="footer-widget-infor-p mb-4">
+                    We don’t send spam so don’t worry.
+                  </div>
+                  <div class="footer-sub-box">
+                    <input
+                      class="footer-sub-input"
+                      type="email"
+                      name=""
+                      id=""
+                      placeholder="Your e-mail"
+                    />
+                    <button class="footer-sub-submit">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="12"
+                        viewBox="0 0 16 12"
+                        fill="currentColor"
+                      >
+                        <path
+                          d="M0 2C0 0.895431 0.895431 0 2 0H14C15.1046 0 16 0.89543 16 2V10C16 11.1046 15.1046 12 14 12H2C0.895431 12 0 11.1046 0 10V2ZM2 1C1.44772 1 1 1.44772 1 2V2.2169L8 6.4169L15 2.2169V2C15 1.44772 14.5523 1 14 1H2ZM15 3.3831L10.2919 6.20794L15 9.10522V3.3831ZM14.9662 10.2586L9.32583 6.7876L8 7.5831L6.67417 6.7876L1.03376 10.2586C1.14774 10.6855 1.53715 11 2 11H14C14.4628 11 14.8523 10.6855 14.9662 10.2586ZM1 9.10522L5.70808 6.20794L1 3.3831V9.10522Z"
+                          fill=""
+                        />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
     <script src="asset/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="./asset/js/search.js"></script>
-
-    
-</body>
-
+  </body>
 </html>
