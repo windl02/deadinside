@@ -68,6 +68,7 @@ function renderPagination(currentPage, totalPages) {
     return pages.join('');
 }
 
+
 function animateValue(element, start, end, duration) {
     let startTimestamp = null;
     const step = (timestamp) => {
@@ -94,7 +95,7 @@ function fetchJobs(page = 1) {
 
             const totalItems = result.totalItems;
             const countJobElement = document.getElementById("countJob");
-            
+
             animateValue(countJobElement, 0, totalItems, 2000); // 2000ms = 2s
 
             const jobsResult = result.jobs;

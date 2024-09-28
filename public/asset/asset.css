@@ -520,3 +520,47 @@ color: #000;
     color: #6c757d;
     cursor: not-allowed;
 }
+
+/* CSS cho thanh phân trang */
+.pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+.page-item {
+    margin: 0 5px;
+}
+
+.page-link {
+    display: block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.page-link:hover {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+    border: 2px solid #007bff;
+}
+
+.page-item.active .page-link {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+}
+
+.page-item.disabled .page-link {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
