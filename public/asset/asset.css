@@ -527,14 +527,14 @@ color: #000;
 }
 
 .page-link:hover {
-    background-color: #007bff;
+    background-color: #b15bbf;
     color: white;
     transform: scale(1.1);
-    border: 2px solid #007bff;
+    border: 2px solid #b15bbf;
 }
 
 .page-item.active .page-link {
-    background-color: #007bff;
+    background-color: #b15bbf;
     color: white;
     transform: scale(1.1);
 }
