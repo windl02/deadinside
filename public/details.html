@@ -115,7 +115,7 @@
                     <div class="ec-job-info-head-box">
                         <div class="ec-job-item d-flex align-items-center justify-content-around bg-transparent">
                             <div class="d-flex align-items-center gap-5">
-                                <img width="80" height="80" src="./asset/media/img/2-2.png" alt=""
+                                <img width="80" height="80" id="image_company" src="" alt=""
                                 class="ec-job-img" />
                             <div class="ec-job-item-content">
                                 <div class="ec-job-name" id="job-name"></div>
@@ -159,10 +159,10 @@
                     <div class="row justify-content-between">
                         <div class="col-8">
                             <div class="ec-job-info-content-title">
-                                Thông tin công việc
+                                
                             </div>
                             <p class="ec-job-infor-content-para mb-4" id="jobDetail">
-                                As a Product Designer, you will work within a Product Delivery Team fused with UX, engineering, product and data talent. You will help the team design beautiful interfaces that solve business challenges for our clients. We work with a number of Tier 1 banks on building web-based applications for AML, KYC and Sanctions List management workflows. This role is ideal if you are looking to segue your career into the FinTech or Big Data arenas.
+                                Đang tải...
                             </p>
                         </div>
                         <div class="col-3">
@@ -314,11 +314,17 @@
                 const jobOvForm = document.getElementById('job-overv-form')
                 const jobLevel = document.getElementById('job-level')
                 const jobOvLevel = document.getElementById('job-overv-level')
+                const image_company = document.getElementById('image_company')
+
+
 
 
                 if (data.message) {
                     jobDetailElement.innerHTML = `<p>${data.message}</p>`;
                 } else {
+                    
+                    image_company.src = data.company.image; // Đường dẫn mới cho ảnh
+
                     jobDetailElement.innerHTML = data.jobs.description;
                     jobName.innerHTML = data.jobs.title;
                     jobForm.innerHTML = data.jobs.form;
