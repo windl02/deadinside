@@ -92,9 +92,11 @@ function fetchJobs(page = 1) {
         },
         success: function(result) {
 
+            const totalItems = result.totalItems;
             const countJobElement = document.getElementById("countJob");
-            animateValue(countJobElement, 0, totalItems, 2000); // 2000ms = 2s
             
+            animateValue(countJobElement, 0, totalItems, 2000); // 2000ms = 2s
+
             const jobsResult = result.jobs;
             const jobsList = document.getElementById('jobs-list');
             const jobPage = document.getElementById('pagination');
