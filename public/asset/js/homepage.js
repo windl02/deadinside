@@ -93,7 +93,7 @@ function fetchJobs(page = 1) {
                     `<div class="col-xl-4 col-md-6">
                         <div class="ec-job-item d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <img width="50" height="50" src="./asset/media/img/2-2.png" alt=""
+                                <img width="50" height="50" src="${job.company.image}" alt=""
                                 class="ec-job-img m-3" />
                             <div class="ec-job-item-content ms-3">
                                 <a class="ec-job-name text-dark text-decoration-none" href="https://deadinside.pages.dev/public/details?id=${job.jobs.id}">${job.jobs.title}</a>
