@@ -1,23 +1,31 @@
 
 function renderPagination(currentPage, totalPages) {
-    const paginationLimit = 5; // Số trang hiển thị tối đa
+    const paginationLimit = 5;
     let pages = [];
 
     // Thêm trang trước đó (Previous)
     if (currentPage > 1) {
         pages.push(`
             <li class="page-item">
-                <button class="page-link" onclick="fetchJobs(${currentPage - 1})">Previous</button>
+                <button class="page-link" onclick="fetchJobs(${currentPage - 1})">
+                    <i class="fas fa-chevron-left"></i> <!-- Biểu tượng mũi tên -->
+                </button>
+            </li>
+        `);
+    } else {
+        pages.push(`
+            <li class="page-item">
+                <button class="page-link">
+                    <i class="fas fa-chevron-left"></i> <!-- Biểu tượng mũi tên -->
+                </button>
             </li>
         `);
     }
 
-    // Nếu số lượng trang lớn hơn giới hạn phân trang
     if (totalPages > paginationLimit) {
         const startPage = Math.max(1, currentPage - Math.floor(paginationLimit / 2));
         const endPage = Math.min(totalPages, currentPage + Math.floor(paginationLimit / 2));
 
-        // Nếu không bắt đầu từ trang 1 thì thêm "..."
         if (startPage > 1) {
             pages.push(`
                 <li class="page-item">
@@ -27,7 +35,6 @@ function renderPagination(currentPage, totalPages) {
             `);
         }
 
-        // Thêm các trang ở giữa
         for (let i = startPage; i <= endPage; i++) {
             pages.push(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
@@ -36,7 +43,6 @@ function renderPagination(currentPage, totalPages) {
             `);
         }
 
-        // Nếu không kết thúc ở trang cuối cùng thì thêm "..."
         if (endPage < totalPages) {
             pages.push(`
                 <li class="page-item disabled"><span class="page-link">...</span></li>
@@ -46,7 +52,6 @@ function renderPagination(currentPage, totalPages) {
             `);
         }
     } else {
-        // Nếu số lượng trang nhỏ hơn hoặc bằng giới hạn thì hiển thị toàn bộ
         for (let i = 1; i <= totalPages; i++) {
             pages.push(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
@@ -60,7 +65,17 @@ function renderPagination(currentPage, totalPages) {
     if (currentPage < totalPages) {
         pages.push(`
             <li class="page-item">
-                <button class="page-link" onclick="fetchJobs(${currentPage + 1})">Next</button>
+                <button class="page-link" onclick="fetchJobs(${currentPage + 1})">
+                    <i class="fas fa-chevron-right"></i> <!-- Biểu tượng mũi tên -->
+                </button>
+            </li>
+        `);
+    } else {
+        pages.push(`
+            <li class="page-item">
+                <button class="page-link">
+                    <i class="fas fa-chevron-right"></i> <!-- Biểu tượng mũi tên -->
+                </button>
             </li>
         `);
     }
@@ -102,7 +117,7 @@ function fetchJobs(page = 1) {
                     `<div class="col-xl-4 col-md-6">
                         <div class="ec-job-item d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <img width="50" height="50" src="./asset/media/img/2-2.png" alt=""
+                                <img width="50" height="50" src="${job.company.image}" alt=""
                                 class="ec-job-img m-3" />
                             <div class="ec-job-item-content ms-3">
                                 <a class="ec-job-name text-dark text-decoration-none" href="https://deadinside.pages.dev/public/details?id=${job.jobs.id}">${job.jobs.title}</a>
