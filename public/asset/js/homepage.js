@@ -12,6 +12,14 @@ function renderPagination(currentPage, totalPages) {
                 </button>
             </li>
         `);
+    } else {
+        pages.push(`
+            <li class="page-item">
+                <button class="page-link">
+                    <i class="fas fa-chevron-left"></i> <!-- Biểu tượng mũi tên -->
+                </button>
+            </li>
+        `);
     }
 
     if (totalPages > paginationLimit) {
@@ -58,6 +66,14 @@ function renderPagination(currentPage, totalPages) {
         pages.push(`
             <li class="page-item">
                 <button class="page-link" onclick="fetchJobs(${currentPage + 1})">
+                    <i class="fas fa-chevron-right"></i> <!-- Biểu tượng mũi tên -->
+                </button>
+            </li>
+        `);
+    } else {
+        pages.push(`
+            <li class="page-item">
+                <button class="page-link">
                     <i class="fas fa-chevron-right"></i> <!-- Biểu tượng mũi tên -->
                 </button>
             </li>
