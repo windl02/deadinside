@@ -68,6 +68,19 @@ function renderPagination(currentPage, totalPages) {
     return pages.join('');
 }
 
+function animateValue(element, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        element.innerText = `Có ${Math.floor(progress * (end - start) + start)} việc làm lĩnh vực công nghệ thông tin cho bạn`;
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
 
 function fetchJobs(page = 1) {
     var url = `https://jobproj.xelanthantoc.workers.dev/api/job?page=${page}&pageSize=9`;
@@ -78,7 +91,10 @@ function fetchJobs(page = 1) {
             withCredentials: true // Để gửi cookies
         },
         success: function(result) {
-            $("#countJob").text(`Có ${result.totalItems} việc làm lĩnh vực công nghệ thông tin cho bạn`)
+
+            const countJobElement = document.getElementById("countJob");
+            animateValue(countJobElement, 0, totalItems, 2000); // 2000ms = 2s
+            
             const jobsResult = result.jobs;
             const jobsList = document.getElementById('jobs-list');
             const jobPage = document.getElementById('pagination');
