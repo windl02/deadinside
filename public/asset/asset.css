@@ -508,7 +508,7 @@ color: #000;
     margin-bottom: 0;
 }
 
-.page-link {
+/* .page-link {
     background-color: transparent;
     border: none;
     color: #007bff;
@@ -519,24 +519,15 @@ color: #000;
 .page-link:disabled {
     color: #6c757d;
     cursor: not-allowed;
-}
-
-/* CSS cho thanh phân trang */
-.pagination {
-    display: flex;
-    list-style: none;
-    padding: 0;
-}
-
-.page-item {
-    margin: 0 5px;
-}
+} */
 
 .page-link {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px;
     height: 40px;
-    line-height: 40px;
+    line-height: normal;
     text-align: center;
     border-radius: 50%;
     background-color: #f0f0f0;
@@ -564,3 +555,4 @@ color: #000;
     cursor: not-allowed;
     opacity: 0.6;
 }
+

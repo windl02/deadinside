@@ -1,23 +1,23 @@
 
 function renderPagination(currentPage, totalPages) {
-    const paginationLimit = 5; // Số trang hiển thị tối đa
+    const paginationLimit = 5;
     let pages = [];
 
     // Thêm trang trước đó (Previous)
     if (currentPage > 1) {
         pages.push(`
             <li class="page-item">
-                <button class="page-link" onclick="fetchJobs(${currentPage - 1})">Previous</button>
+                <button class="page-link" onclick="fetchJobs(${currentPage - 1})">
+                    <i class="fas fa-chevron-left"></i> <!-- Biểu tượng mũi tên -->
+                </button>
             </li>
         `);
     }
 
-    // Nếu số lượng trang lớn hơn giới hạn phân trang
     if (totalPages > paginationLimit) {
         const startPage = Math.max(1, currentPage - Math.floor(paginationLimit / 2));
         const endPage = Math.min(totalPages, currentPage + Math.floor(paginationLimit / 2));
 
-        // Nếu không bắt đầu từ trang 1 thì thêm "..."
         if (startPage > 1) {
             pages.push(`
                 <li class="page-item">
@@ -27,7 +27,6 @@ function renderPagination(currentPage, totalPages) {
             `);
         }
 
-        // Thêm các trang ở giữa
         for (let i = startPage; i <= endPage; i++) {
             pages.push(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
@@ -36,7 +35,6 @@ function renderPagination(currentPage, totalPages) {
             `);
         }
 
-        // Nếu không kết thúc ở trang cuối cùng thì thêm "..."
         if (endPage < totalPages) {
             pages.push(`
                 <li class="page-item disabled"><span class="page-link">...</span></li>
@@ -46,7 +44,6 @@ function renderPagination(currentPage, totalPages) {
             `);
         }
     } else {
-        // Nếu số lượng trang nhỏ hơn hoặc bằng giới hạn thì hiển thị toàn bộ
         for (let i = 1; i <= totalPages; i++) {
             pages.push(`
                 <li class="page-item ${i === currentPage ? 'active' : ''}">
@@ -60,13 +57,16 @@ function renderPagination(currentPage, totalPages) {
     if (currentPage < totalPages) {
         pages.push(`
             <li class="page-item">
-                <button class="page-link" onclick="fetchJobs(${currentPage + 1})">Next</button>
+                <button class="page-link" onclick="fetchJobs(${currentPage + 1})">
+                    <i class="fas fa-chevron-right"></i> <!-- Biểu tượng mũi tên -->
+                </button>
             </li>
         `);
     }
 
     return pages.join('');
 }
+
 
 
 function animateValue(element, start, end, duration) {
