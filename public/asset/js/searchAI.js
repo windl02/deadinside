@@ -103,9 +103,9 @@ function fetchJobs() {
                                 <img width="50" height="50" src="" alt=""
                                 class="ec-job-img m-3" />
                             <div class="ec-job-item-content ms-3">
-                                <a class="ec-job-name text-dark text-decoration-none" href="https://deadinside.pages.dev/public/details?id=${job.jobs.id}">${job.jobs.title}</a>
+                                <a class="ec-job-name text-dark text-decoration-none" href="https://deadinside.pages.dev/public/details?id=${job.id}">${job.title}</a>
                                 <div class="ec-job-content-tag mt-2 d-flex flex-wrap">
-                                    <div class="ec-job-tag-item">${job.jobs.salary}</div>
+                                    <div class="ec-job-tag-item">${job.salary}</div>
                                 </div>
                             </div>
                             </div>
