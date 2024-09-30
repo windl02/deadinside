@@ -86,11 +86,12 @@ function fetchJobs() {
             withCredentials: true // Để gửi cookies
         },
         success: function(result) {
-            const jobsResult = result.jobs;
+            const jobsResult = result.result.result;
             const jobsList = document.getElementById('jobs-list');
             const jobPage = document.getElementById('pagination');
             const authButtons = document.getElementById('auth-buttons');
             const token = localStorage.getItem('token');
+
 
             // Hiển thị danh sách công việc
             if (jobsResult.length > 0) {
