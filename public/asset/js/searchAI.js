@@ -92,6 +92,7 @@ function fetchJobs() {
             const authButtons = document.getElementById('auth-buttons');
             const token = localStorage.getItem('token');
 
+            console.log(result)
 
             // Hiển thị danh sách công việc
             if (jobsResult.length > 0) {
