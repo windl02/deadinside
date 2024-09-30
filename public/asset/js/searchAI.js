@@ -86,7 +86,7 @@ function fetchJobs() {
             withCredentials: true // Để gửi cookies
         },
         success: function(result) {
-            const jobsResult = result.result.result;
+            const jobsResult = result.jobs;
             const jobsList = document.getElementById('jobs-list');
             const jobPage = document.getElementById('pagination');
             const authButtons = document.getElementById('auth-buttons');
