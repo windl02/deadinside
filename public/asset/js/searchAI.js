@@ -123,8 +123,6 @@ function fetchJobs() {
                     </div>`
                 ).join('');
                 
-                // Cập nhật phân trang
-                jobPage.innerHTML = renderPagination(currentPage, totalPages);
             } else {
                 jobsList.innerHTML = 'Không có công việc nào.';
             }
