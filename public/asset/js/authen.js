@@ -13,8 +13,8 @@ if (token) {
     $('#accountBT2').attr("href", "https://deadinside.pages.dev/public/profile");
 
     if (role === "admin"){
-        $('#accountBT1').attr("href", "https://deadinside.pages.dev/public/admin");
-        $('#accountBT1').html("Trang quản lý")
+        $('#accountBT2').attr("href", "https://deadinside.pages.dev/public/admin");
+        $('#accountBT2').html("Trang quản lý")
     }
 
     
