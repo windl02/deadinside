@@ -116,15 +116,30 @@ function fetchJobs(page = 1) {
             // Hiển thị danh sách công việc
             if (jobsResult.length > 0) {
                 jobsList.innerHTML = jobsResult.map(job =>
-                    `<tr>
-                        <th scope="row">1</th>
-                        <td>${job.jobs.id}</td>
-                        <td>${job.jobs.title}</td>
-                        <td class="text-end">
-                            <button type="button" class="btn btn-success">Sửa</button>
-                            <button type="button" class="btn btn-danger">Xoá</button>
-                        </td>
-                    </tr>`
+                    `<div class="col-xl-4 col-md-6">
+                        <div class="ec-job-item d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <img width="50" height="50" src="${job.company.image}" alt=""
+                                class="ec-job-img m-3" />
+                            <div class="ec-job-item-content ms-3">
+                                <a class="ec-job-name text-dark text-decoration-none" href="https://deadinside.pages.dev/public/details?id=${job.jobs.id}">${job.jobs.title}</a>
+                                <div class="ec-job-content-tag mt-2 d-flex flex-wrap">
+                                    <div class="ec-job-tag-item">${job.jobs.salary}</div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="ec-job-content-save-btn">
+                                <button class="ec-job-save-btn rounded-circle">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="16"
+                                        viewBox="0 0 12 16" fill="none">
+                                        <path
+                                            d="M0 2C0 0.895431 0.89543 0 2 0H10C11.1046 0 12 0.89543 12 2V15.5C12 15.6844 11.8985 15.8538 11.7359 15.9408C11.5733 16.0278 11.3761 16.0183 11.2226 15.916L6 13.1009L0.77735 15.916C0.623922 16.0183 0.42665 16.0278 0.264071 15.9408C0.101492 15.8538 0 15.6844 0 15.5V2ZM2 1C1.44772 1 1 1.44772 1 2V14.5657L5.72265 12.084C5.8906 11.972 6.1094 11.972 6.27735 12.084L11 14.5657V2C11 1.44772 10.5523 1 10 1H2Z"
+                                            fill="black" />
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </div>`
                 ).join('');
                 
                 // Cập nhật phân trang
