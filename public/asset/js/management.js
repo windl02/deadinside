@@ -185,13 +185,11 @@ async function logout() {
 
 document.getElementById('searchButton').addEventListener('click', () => {
     const query = document.getElementById('searchInput').value.trim();
-    window.location.href = `https://deadinside.pages.dev/public/joblist?query=${query}`
+    window.location.href = `https://deadinside.pages.dev/public/admin?query=${query}`
 });
 
 // Gọi hàm để tải dữ liệu khi trang được tải
 fetchJobs();
 
-function redirectUrl(){
-    window.location.href="https://deadinside.pages.dev/public/search"
-}
+
   
