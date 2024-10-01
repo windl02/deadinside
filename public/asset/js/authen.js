@@ -1,3 +1,4 @@
+const authButtons = document.getElementById('auth-buttons');
 const token = localStorage.getItem('token');
 const role = localStorage.getItem('role')
 
