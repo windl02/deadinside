@@ -117,7 +117,7 @@ function fetchJobs(page = 1) {
             if (jobsResult.length > 0) {
                 jobsList.innerHTML = jobsResult.map(job =>
                     `<tr>
-                        <th scope="row">${i++}</th>
+                        <th scope="row">1</th>
                         <td>${job.jobs.id}</td>
                         <td>${job.jobs.title}</td>
                         <td class="text-end">
