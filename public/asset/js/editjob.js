@@ -67,6 +67,9 @@ $(document).ready(function() {
         $.ajax({
             url: 'https://jobproj.xelanthantoc.workers.dev/api/job/update?id=' + idJob, // API với id từ idJob
             method: 'PUT', // Đổi phương thức thành PUT
+            headers: {
+                'Authorization': 'Bearer YOUR_ACCESS_TOKEN'  // Thay YOUR_ACCESS_TOKEN bằng token chính xác
+            },
             contentType: 'application/json', // Định dạng gửi là JSON
             data: JSON.stringify(formData), // Chuyển formData thành chuỗi JSON
             success: function(response) {
