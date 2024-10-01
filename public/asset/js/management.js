@@ -121,7 +121,7 @@ function fetchJobs(page = 1) {
                         <td>${job.jobs.id}</td>
                         <td>${job.jobs.title}</td>
                         <td class="text-end">
-                            <button type="button" onclick="redirectUrl('https://deadinside.pages.dev/public/editjob?id=${job.jobs.id}')" class="btn btn-success">Sửa</button>
+                            <button type="button" onclick="redirectUrl(${job.jobs.id})" class="btn btn-success">Sửa</button>
                         </td>
                     </tr>`
                 ).join('');
@@ -190,8 +190,8 @@ document.getElementById('searchButton').addEventListener('click', () => {
 // Gọi hàm để tải dữ liệu khi trang được tải
 fetchJobs();
 
-function redirectUrl(url){
-    window.location.href(url)
+function redirectUrl(id){
+    window.location.href(`https://deadinside.pages.dev/public/editjob?id=${$id}`)
 }
 
 
