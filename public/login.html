@@ -249,7 +249,7 @@
             $.ajax({
                 url: 'https://jobproj.xelanthantoc.workers.dev/login',
                 method: 'POST',
-                data: formData, // Dữ liệu gửi đi
+                data: JSON.stringify(formData), // Dữ liệu gửi đi
                 success: function(result) {
                     const token = result.token;
                     const role = result.role;
