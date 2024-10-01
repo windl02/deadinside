@@ -112,7 +112,7 @@ function fetchJobs(page = 1) {
             const token = localStorage.getItem('token');
             const currentPage = result.currentPage;
             const totalPages = result.totalPages;
-            var i = 1;
+            var i = (currentPage - 1 ) * 9 + 1;
             // Hiển thị danh sách công việc
             if (jobsResult.length > 0) {
                 jobsList.innerHTML = jobsResult.map(job =>
