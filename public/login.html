@@ -250,9 +250,6 @@
                 url: 'https://jobproj.xelanthantoc.workers.dev/login',
                 method: 'POST',
                 data: formData, // Dữ liệu gửi đi
-                xhrFields: {
-                    withCredentials: true // Để gửi cookies
-                },
                 success: function(result) {
                     const token = result.token;
                     const role = result.role;
