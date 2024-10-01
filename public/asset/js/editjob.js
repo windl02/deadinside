@@ -48,7 +48,6 @@ $(document).ready(function() {
 
         // Lấy giá trị từ các trường input
         var formData = {
-            idJob: $('#idJob').val(),
             title: $('#title').val(),
             salary: $('#salary').val(),
             level: $('#level').val(),
