@@ -92,6 +92,9 @@ const urlParams = new URLSearchParams(queryString);
 
 // Lấy giá trị của tham số 'name' và 'age'
 const query = urlParams.get('query');
+if (query != null){
+    document.getElementById('searchInput').value = query;
+}
 
 function fetchJobs(page = 1) {
     var url = query!=null?`https://jobproj.xelanthantoc.workers.dev/api/job/search?res=${query}&page=${page}&pageSize=9`:`https://jobproj.xelanthantoc.workers.dev/api/job/search?page=${page}&pageSize=9`;

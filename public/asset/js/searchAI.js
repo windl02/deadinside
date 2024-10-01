@@ -78,6 +78,10 @@ const urlParams = new URLSearchParams(queryString);
 // Lấy giá trị của tham số 'name' và 'age'
 const query = urlParams.get('query');
 
+if (query != null){
+    document.getElementById('searchInput').value = query;
+}
+
 function fetchJobs() {
     $.ajax({
         url: `https://jobproj.xelanthantoc.workers.dev/ai/job/search?res=${query}`, // URL API
