@@ -249,7 +249,11 @@
             $.ajax({
                 url: 'https://jobproj.xelanthantoc.workers.dev/login',
                 method: 'POST',
-                data: JSON.stringify(formData), // Dữ liệu gửi đi
+                contentType: 'application/json',  // Đặt contentType là JSON
+                data: JSON.stringify(formData),   // Chuyển formData thành chuỗi JSON
+                beforeSend: function(xhr) {
+                    xhr.setRequestHeader('Content-Type', 'application/json');  // Thiết lập header rõ ràng
+                },
                 success: function(result) {
                     const token = result.token;
                     const role = result.role;
