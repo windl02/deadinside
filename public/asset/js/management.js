@@ -122,7 +122,6 @@ function fetchJobs(page = 1) {
                         <td>${job.jobs.title}</td>
                         <td class="text-end">
                             <button type="button" onclick="redirectUrl('https://deadinside.pages.dev/public/editjob?id=${job.jobs.id}')" class="btn btn-success">Sửa</button>
-                            <button type="button" class="btn btn-danger">Xoá</button>
                         </td>
                     </tr>`
                 ).join('');
