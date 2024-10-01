@@ -45,7 +45,7 @@ $(document).ready(function() {
     // Bắt sự kiện submit của form
     $('#updateJobForm').on('submit', function(event) {
         event.preventDefault(); // Ngăn chặn form submit thông thường
-
+        const idJob = $('#idJob').val();
         // Lấy giá trị từ các trường input
         var formData = {
             title: $('#title').val(),
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
         // Gửi dữ liệu qua AJAX với phương thức PUT
         $.ajax({
-            url: 'https://jobproj.xelanthantoc.workers.dev/api/job/update?id=' + formData.idJob, // API với id từ idJob
+            url: 'https://jobproj.xelanthantoc.workers.dev/api/job/update?id=' + idJob, // API với id từ idJob
             method: 'PUT', // Đổi phương thức thành PUT
             contentType: 'application/json', // Định dạng gửi là JSON
             data: JSON.stringify(formData), // Chuyển formData thành chuỗi JSON
