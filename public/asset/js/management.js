@@ -150,7 +150,7 @@ document.getElementById('searchButton').addEventListener('click', () => {
 fetchJobs();
 
 function redirectUrl(id){
-    window.location.href = `https://deadinside.pages.dev/public/editjob?id=${id}`;
+    window.location.href = `https://deadinside.pages.dev/public/updatejob?id=${id}`;
 }
 
 
